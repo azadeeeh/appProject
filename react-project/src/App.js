@@ -12,7 +12,7 @@ const App = () => {
         .then(response => response.json())
         .then(data => {
             setPosts(data);
-            setFilteredPosts(data); // Add this line
+            setFilteredPosts(data); 
         })
         .catch(error => console.error('Error:', error));
 }, []);
@@ -31,7 +31,6 @@ const App = () => {
     })
     .then(response => response.json())
     .then(data => {
-        // Update your local state with the new post returned from MockAPI
         setPosts(prevPosts => [data, ...prevPosts]);
         setFilteredPosts(prevFilteredPosts => [data, ...prevFilteredPosts]);
     })
