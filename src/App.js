@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import logo from './images/hlogo.png';
 import React, { useEffect, useState } from 'react';
 import PostList from './PostList';
@@ -11,13 +12,12 @@ const App = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('https://654166c1f0b8287df1fe51c2.mockapi.io/hobby')
-      .then(response => response.json())
-      .then(data => {
-        setPosts(data);
-        setFilteredPosts(data);
-      })
-      .catch(error => console.error('Error:', error));
+    axios.get('https://654166c1f0b8287df1fe51c2.mockapi.io/hobby')
+        .then(response => {
+            setPosts(response.data);
+            setFilteredPosts(response.data);
+        })
+        .catch(error => console.error('Error:', error));
   }, []);
 
 
@@ -25,19 +25,12 @@ const App = () => {
   const [categories, setCategories] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
 
   const addNewPost = (newPost) => {
-    fetch('https://654166c1f0b8287df1fe51c2.mockapi.io/hobby', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newPost),
+    axios.post('https://654166c1f0b8287df1fe51c2.mockapi.io/hobby', newPost)
+    .then(response => {
+        setPosts(prevPosts => [response.data, ...prevPosts]);
+        setFilteredPosts(prevFilteredPosts => [response.data, ...prevFilteredPosts]);
     })
-      .then(response => response.json())
-      .then(data => {
-        setPosts(prevPosts => [data, ...prevPosts]);
-        setFilteredPosts(prevFilteredPosts => [data, ...prevFilteredPosts]);
-      })
-      .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error));
   };
 
 
