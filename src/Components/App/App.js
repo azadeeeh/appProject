@@ -1,11 +1,11 @@
-import './App.css';
-import logo from './images/hlogo.png';
+import '../App/App.css';
+import logo from '../../Assets/images/hlogo.png';
 import React, { useEffect, useState } from 'react';
-import PostList from './PostList';
-import PostFilter from './PostFilter';
-import CreatePost from './CreatePost';
-import EventButton from './EventButton';
-import PostService from './Services/PostService';
+import PostList from '../Posts/PostList';
+import PostFilter from '../Posts/PostFilter';
+import CreatePost from '../Events/CreatePost';
+import EventButton from '../Events/EventButton';
+import PostService from '../../Services/PostService';
 
 
 const App = () => {
