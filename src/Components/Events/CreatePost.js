@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../App/App.css';
 
 const CreatePost = ({ addNewPost, categories}) => {
   const [post, setPost] = useState([]);
