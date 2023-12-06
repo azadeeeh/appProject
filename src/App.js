@@ -18,7 +18,7 @@ const App = () => {
           setPosts(fetchedPosts);
           setFilteredPosts(fetchedPosts);
         }).catch((err) => {
-          console.error("Error happend while fetching posts: ", err.Message)
+          console.error("Error happened while fetching posts: ", err.message)
         })
     }
     fetchPosts();
@@ -35,7 +35,6 @@ const App = () => {
       setPosts(prevPosts => [addedPost, ...prevPosts]);
       setFilteredPosts(prevFilteredPosts => [addedPost, ...prevFilteredPosts]);
     }).catch((err) => {
-
       console.error("Error happened while adding new post: ", err.message);
     })
   }
