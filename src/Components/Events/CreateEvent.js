@@ -5,7 +5,8 @@ const CreateEvent = () => {
 
     return (
         <div>
-            <h1>welcome</h1>
+            <h1>Create Event Page</h1>
+
         </div>
     );
 };
