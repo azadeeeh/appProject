@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom
 
 const App = () => {
   const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [categories, setCategories] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
 
   useEffect(() => {
     async function fetchPosts() {
@@ -26,10 +28,6 @@ const App = () => {
     }
     fetchPosts();
   }, []);
-
-
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const [categories, setCategories] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
 
   const handleAddPost = async (newPost) => {
     PostService.addPost(
@@ -50,6 +48,8 @@ const App = () => {
       setFilteredPosts(filtered);
     }
   };
+
+
 
   return (
     <Router>
@@ -74,9 +74,6 @@ const App = () => {
 
           <Route path="/create-event" element={<CreateEvent />} />
         </Routes>
-
-
-
 
         <PostList posts={filteredPosts} />
 
