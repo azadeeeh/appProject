@@ -5,7 +5,10 @@ import PostList from '../Posts/PostList';
 import PostFilter from '../Posts/PostFilter';
 import CreatePost from '../Events/CreatePost';
 import EventButton from '../Events/EventButton';
+import CreateEvent from '../Events/CreateEvent';
 import PostService from '../../Services/PostService';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+
 
 
 const App = () => {
@@ -49,22 +52,40 @@ const App = () => {
   };
 
   return (
-    <div>
-      <header>
-        <img className="logo" src={logo} alt="Home Page" />
-        <PostFilter categories={categories} filterPosts={filterPosts} />
+    <Router>
+      <div>
+        <header>
+          <img className="logo" src={logo} alt="Home Page" />
+          <PostFilter categories={categories} filterPosts={filterPosts} />
+
+
+
+        </header>
+        <hr className="hrStyle" />
+
         <EventButton />
 
+        <Routes>
 
-      </header>
-      <hr className="hrStyle" />
+          <Route index element={<CreatePost addNewPost={handleAddPost} categories={categories} />} />
 
-      <CreatePost addNewPost={handleAddPost} categories={categories} />
-      <PostList posts={filteredPosts} />
-      <footer>
-        <p> Hobby Hut &copy; 2023</p>
-      </footer>
-    </div>
+          <Route index element={<PostList posts={filteredPosts} />} />
+
+
+          <Route path="/create-event" element={<CreateEvent />} />
+        </Routes>
+
+
+
+
+        <PostList posts={filteredPosts} />
+
+
+        <footer>
+          <p> Hobby Hut &copy; 2023</p>
+        </footer>
+      </div>
+    </Router >
   );
 };
 
