@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../App/App.css';
 
-const CreatePost = ({ addNewPost, categories}) => {
+
+const CreatePost = ({ addNewPost, categories }) => {
   const [post, setPost] = useState([]);
 
   const handleSubmit = (event) => {
@@ -25,7 +25,7 @@ const CreatePost = ({ addNewPost, categories}) => {
         placeholder="What's on your mind?"
         className="post-content"
       />
-      
+
       <select
         value={post.category}
         onChange={(e) => setPost({ ...post, category: e.target.value })}
