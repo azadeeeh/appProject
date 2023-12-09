@@ -7,7 +7,7 @@ let hardCodedUser = { "id": 1 };
 const PostItem = ({ post }) => {
   return (
     <li>
-      <StarRating canSpin={true} loggedInUser={hardCodedUser} post={post} starCount={5} />
+      <StarRating canSpin={true} loggedInUser={hardCodedUser} post={post} starCount={5} averageStarDeciamlPoint={1} />
       <h3>{post.title}</h3>
       <p>{post.content}</p>
       <small>Category: {post.category}</small>

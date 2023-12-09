@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import PostService from "../../Services/PostService"
 
 // Source for the custom rating component: https://github.com/chibuike07/star_rating
-const CustomRating = ({ canSpin, post, loggedInUser, starCount }) => {
+
+export default function CustomRating({ canSpin, post, loggedInUser, starCount, averageStarDeciamlPoint }) {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
     const [shouldSpin, setShouldSpin] = useState(canSpin);
+
+    let ratesAverage = 0;
+    if (post.rates.length > 0)
+        ratesAverage = post.rates.reduce((sum, prevRate) => { return sum + prevRate }, 0) / post.rates.length;
 
     useEffect(() => {
         if (post.userRateId.includes(loggedInUser.id)) {
@@ -34,15 +39,16 @@ const CustomRating = ({ canSpin, post, loggedInUser, starCount }) => {
           text-align: center;
         }
       }
+
+      pre{
+        font-size: .75em;
+        margin-left:5px;
+      }
     
       .radio_input {
         display: none;
       }
     `;
-
-    // if (post.userRateId.includes(loggedInUser.id)) {
-    //     setRating(post.rates[post.userRateId.findIndex((userId) => userId === loggedInUser.id)]);
-    // }
 
     const handleOnClick = (newRating) => {
         if (!post.userRateId.includes(loggedInUser.id)) {
@@ -82,12 +88,9 @@ const CustomRating = ({ canSpin, post, loggedInUser, starCount }) => {
 
                 )
             }
-            <p>
-                AVE
-            </p>
+            <pre>
+                ave: {ratesAverage.toFixed(averageStarDeciamlPoint)}
+            </pre>
         </RatingWrapper>
     );
 };
-
-
-export default CustomRating;
