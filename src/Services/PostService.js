@@ -15,6 +15,22 @@ const PostService = {
     }
   },
 
+  /**
+   * 
+   * @param {Number} id The ID for the post to get
+   * @returns post associated with the given ID
+   */
+  getPostWithId: async (id) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/hobby/${id}`, {
+        headers: { 'content-type': 'application/json' }
+      });
+      return response.data;
+    } catch (error) {
+      throw new Error('Failed to fetch posts');
+    }
+  },
+
   addPost: async (post) => {
     try {
       const response = await axios.post(`${BASE_URL}/hobby`, post, {
@@ -26,9 +42,9 @@ const PostService = {
     }
   },
 
-  updatePost: async (id, updatedPost) => {
+  updatePost: async (updatedPost) => {
     try {
-      const response = await axios.put(`${BASE_URL}/hobby/${id}`, updatedPost, {
+      const response = await axios.put(`${BASE_URL}/hobby/${updatedPost.id}`, updatedPost, {
         headers: { 'content-type': 'application/json' }
       });
       return response.data;
