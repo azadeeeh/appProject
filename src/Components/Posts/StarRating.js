@@ -6,6 +6,35 @@ import PostService from "../../Services/PostService"
 
 // Source for the custom rating component: https://github.com/chibuike07/star_rating
 
+// Question: How I can create a dynamic css style for ":nth-child(-n + 4)"?
+const RatingWrapper = styled.aside`
+        width: max-content;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          & :nth-child(-n + 4) {
+            margin-right: 0.2rem;
+            width: max-content;
+            text-align: center;
+          }
+        }
+    
+        pre{
+          font-size: .75em;
+          margin-left:5px;
+        }
+      
+        .radio_input {
+          display: none;
+        }
+      `;
+
 export default function CustomRating({ canSpin, post, loggedInUser, starCount, averageStarDeciamlPoint }) {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
@@ -21,34 +50,6 @@ export default function CustomRating({ canSpin, post, loggedInUser, starCount, a
             setShouldSpin(false);
         }
     }, [loggedInUser.id, post.rates, post.userRateId, rating])
-
-    const RatingWrapper = styled.aside`
-      width: max-content;
-      height: max-content;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      span {
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        & :nth-child(-n + ${starCount - 1}) {
-          margin-right: 0.2rem;
-          width: max-content;
-          text-align: center;
-        }
-      }
-
-      pre{
-        font-size: .75em;
-        margin-left:5px;
-      }
-    
-      .radio_input {
-        display: none;
-      }
-    `;
 
     const handleOnClick = (newRating) => {
         if (!post.userRateId.includes(loggedInUser.id)) {
@@ -67,7 +68,6 @@ export default function CustomRating({ canSpin, post, loggedInUser, starCount, a
     return (
         <RatingWrapper>
             {
-
                 [...Array(starCount)].map((n, i) => {
                     const ratingValue = i + 1;
                     return (
