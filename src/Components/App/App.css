@@ -1,11 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #FFFFFF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    margin: 0px;
 }
 
 header {
     display: flex;
     flex-direction: row;
+    background-color: #dcdcdc;
 }
 
 h1 {
@@ -13,21 +20,22 @@ h1 {
 }
 
 img.logo {
-    width: 200px;
-    height: auto;
+    width: auto;
+    height: 3.5rem;
     margin: 10px;
     padding: 10px;
-
+    transition-duration: 250ms;
 }
 
 img.logo:hover {
     transform: scale(1.1);
+    transition-duration: 250ms;
     /* Example: Increase size on hover */
 }
 
 .hrStyle {
-    border: 0.2px solid #FAFAFA;
-
+    border: 0.2rem solid #ececFF;
+    margin: 0;
 }
 
 /* Enhanced Form Styling */

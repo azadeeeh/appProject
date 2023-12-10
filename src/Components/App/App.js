@@ -1,5 +1,4 @@
 import '../App/App.css';
-import logo from '../../Assets/images/hlogo.png';
 import React, { useEffect, useState } from 'react';
 import PostList from '../Posts/PostList';
 import PostFilter from '../Posts/PostFilter';
@@ -7,14 +6,15 @@ import CreatePost from '../Events/CreatePost';
 import EventButton from '../Events/EventButton';
 import CreateEvent from '../Events/CreateEvent';
 import PostService from '../../Services/PostService';
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from '../NavBar/navbar';
 
 
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  const [categories, setCategories] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
+  const [categories,] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
 
   useEffect(() => {
     async function fetchPosts() {
@@ -49,40 +49,33 @@ const App = () => {
     }
   };
 
-
-
   return (
-    <Router>
-      <div>
-        <header>
+    <div>
+      {/* <header>
           <img className="logo" src={logo} alt="Home Page" />
           <PostFilter categories={categories} filterPosts={filterPosts} />
+        </header> */}
+      <header>
+        <Navbar />
+        <PostFilter categories={categories} filterPosts={filterPosts} />
+      </header>
 
+      <hr className="hrStyle" />
 
+      <EventButton />
 
-        </header>
-        <hr className="hrStyle" />
+      <Routes>
+        <Route index element={<CreatePost addNewPost={handleAddPost} categories={categories} />} />
+        <Route index element={<PostList posts={filteredPosts} />} />
+        <Route path="/create-event" element={<CreateEvent />} />
+      </Routes>
 
-        <EventButton />
+      <PostList posts={filteredPosts} />
 
-        <Routes>
-
-          <Route index element={<CreatePost addNewPost={handleAddPost} categories={categories} />} />
-
-          <Route index element={<PostList posts={filteredPosts} />} />
-
-
-          <Route path="/create-event" element={<CreateEvent />} />
-        </Routes>
-
-        <PostList posts={filteredPosts} />
-
-
-        <footer>
-          <p> Hobby Hut &copy; 2023</p>
-        </footer>
-      </div>
-    </Router >
+      <footer>
+        <p> Hobby Hut &copy; 2023</p>
+      </footer>
+    </div>
   );
 };
 
