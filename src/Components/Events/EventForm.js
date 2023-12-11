@@ -1,15 +1,17 @@
 
 
+import '../App/App.css';
 
 
 const EventForm = ({ formData, handleChange, handleSubmit }) => {
 
     return (
 
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className="formStyle" onSubmit={handleSubmit}>
+            <label className="labelStyle">
                 Hobby Type:
                 <input
+                    className="inputStyle"
                     type="text"
                     name="hobbyType"
                     value={formData.hobbyType}
@@ -19,9 +21,10 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <label>
+            <label className="labelStyle">
                 Date:
                 <input
+                    className="inputStyle"
                     type="date"
                     name="date"
                     value={formData.date}
@@ -31,9 +34,10 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <label>
+            <label className="labelStyle">
                 Time:
                 <input
+                    className="inputStyle"
                     type="time"
                     name="time"
                     value={formData.time}
@@ -43,9 +47,10 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <label>
+            <label className="labelStyle">
                 Location:
                 <input
+                    className="inputStyle"
                     type="text"
                     name="location"
                     value={formData.location}
@@ -55,9 +60,10 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <label>
+            <label className="labelStyle">
                 Planned Activity:
                 <input
+                    className="inputStyle"
                     type="text"
                     name="activity"
                     value={formData.activity}
@@ -67,9 +73,10 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <label>
+            <label className="labelStyle">
                 Spaces Available:
                 <input
+                    className="inputStyle"
                     type="number"
                     name="spacesAvailable"
                     value={formData.spacesAvailable}
@@ -79,7 +86,7 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
             </label>
             <br />
 
-            <button type="submit">Create Event</button>
+            <button className="create-event-button" type="submit">Create Event</button>
         </form>
 
 

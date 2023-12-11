@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import EventForm from './EventForm';
-import axios from 'axios';
 import '../App/App.css';
+import axios from 'axios';
+import './event.css';
 const URL = 'https://6576163c0febac18d403ac52.mockapi.io';
 
 
@@ -18,7 +19,7 @@ const EventsList = ({ events, removeEvent }) => {
                     <p>Location: {event.location}</p>
                     <p>Activity: {event.activity}</p>
                     <p>Spaces Available: {event.spacesAvailable}</p>
-                    <button onClick={() => removeEvent(event.id)}>remove</button>
+                    <button className="remove-button" onClick={() => removeEvent(event.id)}>remove</button>
                 </li>
             ))}
         </ul>
@@ -101,7 +102,7 @@ const CreateEvent = newEvent => {
 
     return (
         <div className="event-main">
-            <h1>Create Event Page</h1>
+            <h2>Create Event</h2>
             <EventForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
 
             <div>

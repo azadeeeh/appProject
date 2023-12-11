@@ -36,7 +36,7 @@ const CreatePost = ({ addNewPost, categories }) => {
           <option key={index} value={category}>{category}</option>
         ))}
       </select>
-      <button type="submit" className="post-submit">Add Post</button>
+      <button className="post-submit" type="submit" >Add Post</button>
     </form>
   );
 };

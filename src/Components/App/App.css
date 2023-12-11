@@ -3,10 +3,11 @@
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #E7C5AB;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
     margin: 0px;
+    z-index: 1;
 }
 
 header {
@@ -16,7 +17,7 @@ header {
 }
 
 h1 {
-    color: #5A776B;
+    color: #AE784F;
 }
 
 img.logo {
@@ -62,7 +63,7 @@ img.logo:hover {
 
 /* Category Field Styling */
 .post-category {
-    background-color: #4A90E2;
+    background-color: #AE784F;;
     /* Blue background */
     color: white;
     /* White text */
@@ -83,20 +84,20 @@ img.logo:hover {
 .post-category:hover {
     background-color: white;
     /* Blue background */
-    color: #4A90E2;
+    color: #AE784F;;
     /* White text */
 }
 
 .post-category:focus {
     outline: none;
     /* Remove default focus outline */
-    border-color: #357ABD;
+    border-color:#AE784F;;
     /* Border color on focus */
 }
 
 /* Submit Button Styling */
 .post-form button {
-    background-color: #4A90E2;
+    background-color: #AE784F;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -136,7 +137,7 @@ li {
 
 li:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-color: #4A90E2;
+    border-color: #AE784F;
 }
 
 li h3 {
@@ -152,7 +153,7 @@ li p {
 
 li small {
     /*position: absolute;*/
-    background-color: #4A90E2;
+    background-color: #AE784F;
     color: white;
     padding: 5px;
     border-radius: 5px;
@@ -163,7 +164,7 @@ li small {
 
 /* Filter Category Button Styling */
 .filter-category-button {
-    background-color: #4A90E2;
+    background-color: #AE784F;
     /* Blue background */
     color: white;
     /* White text */
@@ -186,43 +187,50 @@ li small {
 
 .filter-category-button:hover {
     background-color: white;
-    color: #357ABD;
+    color: #AE784F;
     /* Darker blue on hover */
 }
 
 footer {
     text-align: center;
-    color: #17536B;
+    color: #AE784F;
 }
 
 /*event button styling*/
 .event-button {
 
-    background-color: #4A90E2;
-    /* Blue background */
-    color: white;
-    /* White text */
+    background-color: #AE784F;
+    color: #F5EBE3;
     text-decoration: none;
     padding: 10px 15px;
-    /* Padding for size */
     border: none;
-    /* No border */
     border-radius: 5px;
-    /* Rounded corners */
     cursor: pointer;
-    /* Pointer cursor on hover */
     font-size: 1em;
-    /* Font size */
     transition: background-color 0.3s ease, transform 0.2s ease;
     /* Smooth transition for hover effects */
-    margin: 20px 0;
+    margin-left:48px;
     position: relative;
     top: 30px;
+
 }
 
 .event-button:hover {
-    background-color: white;
-    color: #357ABD;
+    background-color: #F5EBE3;
+    color: #AE784F;
     /* Darker blue on hover */
-    margin: 20px 0 0 0;
+    margin-left:48px;
+}
+
+.event-main{
+    background-color: #F5EBE3;
+    height:100%;
+    width:90%;
+    z-index: 2;
+    padding: 40px;
+    position: relative;
+    left:50px;
+    top: 50px;
+    margin: auto 0;
+  
 }
