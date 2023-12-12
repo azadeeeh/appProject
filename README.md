@@ -3,7 +3,7 @@
 A platform for hobby enthusiasts to share and view content about their hobbies, whether it's in crafts, outdoor activities, technology, cooking, or any other.
 
 ## Team member names: 
-Azadeh Zamani, sina Jahromi, Mobina Mobaraki
+Azadeh Zamani, Sina Jahromi, Mobina Mobaraki
 
 ## Features and Contributions
 
