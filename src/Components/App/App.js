@@ -1,25 +1,27 @@
-import '../App/App.css';
-import React, { useEffect, useState } from 'react';
-import PostList from '../Posts/PostList';
-import PostFilter from '../Posts/PostFilter';
-import CreatePost from '../Events/CreatePost';
-import EventButton from '../Events/EventButton';
-import CreateEvent from '../Events/CreateEvent';
-import PostService from '../../Services/PostService';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from '../NavBar/navbar';
-
-
+import '../App/App.css'; // Importing the stylesheet for the application
+import React, { useEffect, useState } from 'react'; // Importing React and its hooks
+import PostList from '../Posts/PostList'; // Importing the PostList component
+import PostFilter from '../Posts/PostFilter'; // Importing the PostFilter component
+import CreatePost from '../Events/CreatePost'; // Importing the CreatePost component
+import EventButton from '../Events/EventButton'; // Importing a component for event-related actions
+import CreateEvent from '../Events/CreateEvent'; // Importing a component for creating events
+import PostService from '../../Services/PostService'; // Importing a service for handling posts
+import { Routes, Route } from 'react-router-dom'; // Importing React Router for navigation
+import Navbar from '../NavBar/navbar'; // Importing the Navbar component
 
 const App = () => {
+  // useState hooks for managing the state of posts and filtered posts
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
-  const [categories,] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
+  // Hardcoded categories for filtering purposes
+  const [categories,] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']);
 
+  // useEffect hook to fetch posts when the component mounts
   useEffect(() => {
     async function fetchPosts() {
       await PostService.getAllPosts()
         .then(fetchedPosts => {
+          // Setting the fetched posts to state
           setPosts(fetchedPosts);
           setFilteredPosts(fetchedPosts);
         }).catch((err) => {
@@ -29,17 +31,19 @@ const App = () => {
     fetchPosts();
   }, []);
 
+  // Function to handle adding a new post
   const handleAddPost = async (newPost) => {
-    PostService.addPost(
-      newPost
-    ).then((addedPost) => {
-      setPosts(prevPosts => [addedPost, ...prevPosts]);
-      setFilteredPosts(prevFilteredPosts => [addedPost, ...prevFilteredPosts]);
-    }).catch((err) => {
-      console.error("Error happened while adding new post: ", err.message);
-    })
+    PostService.addPost(newPost)
+      .then((addedPost) => {
+        // Updating the state with the new post
+        setPosts(prevPosts => [addedPost, ...prevPosts]);
+        setFilteredPosts(prevFilteredPosts => [addedPost, ...prevFilteredPosts]);
+      }).catch((err) => {
+        console.error("Error happened while adding new post: ", err.message);
+      })
   }
 
+  // Function to filter posts based on category
   const filterPosts = (category) => {
     if (!category || category === '') {
       setFilteredPosts(posts);
@@ -49,12 +53,9 @@ const App = () => {
     }
   };
 
+  // JSX for rendering the application
   return (
     <div>
-      {/* <header>
-          <img className="logo" src={logo} alt="Home Page" />
-          <PostFilter categories={categories} filterPosts={filterPosts} />
-        </header> */}
       <header>
         <Navbar />
         <PostFilter categories={categories} filterPosts={filterPosts} />
