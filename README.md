@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Hobbyist Network App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A platform for hobby enthusiasts to share and view content about their hobbies, whether it's in crafts, outdoor activities, technology, cooking, or any other.
+
+## Team member names: 
+Azadeh Zamani, sina Jahromi, Mobina Mobaraki
+
+## Features and Contributions
+
+1. Content Sharing: Users can create posts about their experience or progress with a specific hobby. The post will be added to a feed displaying all posts, which users can filter by hobby categories.
+
+Developer: Mobina Mobaraki
+Components: 
+App: the main component
+CreatePost: making a new post by defining the title, description, and type of the activity
+PostList: Putting posts together as a list
+PostItem: a child component of PstList that returns the title, description, and category of each post
+
+2. Resource Library: Users can create resources for other users. There are two sections, the resource drafts and the resource library. Users can review drafts and rate them; resources with 5 rating and an average rating of 4.5 stars get added to the resource library. 
+
+Developer: Sina Jahromi
+
+3. Hobby Meetups: Users can create an event page to organize a meetup, with details about the hobby type, date, time, location, planned activity, and spaces available. The events should be viewable for all users.
+
+Developer: Azadeh Zamani
+
 
 ## Available Scripts
 
