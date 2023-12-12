@@ -9,8 +9,11 @@ Azadeh Zamani, Sina Jahromi, Mobina Mobaraki
 
 1. Content Sharing: Users can create posts about their experience or progress with a specific hobby. The post will be added to a feed displaying all posts, which users can filter by hobby categories.
 
-Developer: Mobina Mobaraki
-Components: 
+### Developer: 
+Mobina Mobaraki
+
+### Components: 
+
 App: the main component
 CreatePost: making a new post by defining the title, description, and type of the activity
 PostList: Putting posts together as a list
