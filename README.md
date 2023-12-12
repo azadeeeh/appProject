@@ -14,10 +14,7 @@ Mobina Mobaraki
 
 ### Components: 
 
-App: the main component
-CreatePost: making a new post by defining the title, description, and type of the activity
-PostList: Putting posts together as a list
-PostItem: a child component of PstList that returns the title, description, and category of each post
+App: the main component - CreatePost: making a new post by defining the title, description, and type of the activity - PostList: Putting posts together as a list - PostItem: a child component of PstList that returns the title, description, and category of each post
 
 2. Resource Library: Users can create resources for other users. There are two sections, the resource drafts and the resource library. Users can review drafts and rate them; resources with 5 rating and an average rating of 4.5 stars get added to the resource library. 
 
