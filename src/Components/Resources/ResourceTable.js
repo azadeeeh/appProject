@@ -3,7 +3,7 @@ import "./ResourceTable.css"
 import Modal from "./Modal"
 import CustomRating from '../CustomStarRating/StarRating.js';
 import ResourceService from '../../Services/ResourceService.js';
-import dateFormat, { masks } from 'dateformat';
+import dateFormat from 'dateformat';
 
 const ResourceTable = ({ resources, posts }) => {
   const [modalOpen, setModalOpen] = useState(false);

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://656d0381e1e03bfd572ee9ba.mockapi.io/ReactApp';
-// const BASE_URL = 'https://656d0381e1e03bfd572ee9b.mockapi.io/ReactApp';
 
 const PostService = {
   getAll: async () => {

@@ -10,19 +10,10 @@ const Navbar = () => {
             </Link>
             <nav className='navbar'>
                 <ul>
-
-                    {/* TODO: All hobbies created by the logged-in user will be displayed in the following route */}
                     <ActiveClassLink to="/">Home</ActiveClassLink>
-
-                    {/* TODO: All hobbies will be displayed in the following route */}
                     <ActiveClassLink to="/Hobbies">Hobbies</ActiveClassLink>
-
-                    {/* TODO: All hobbies with rating less than 4.5 will be displayed in the following route */}
                     <ActiveClassLink to="/Drafts">Drafts</ActiveClassLink>
-
-                    {/* TODO: All hobbies with rating higher than 4.5 with at least 5 raters will be displayed in the following route */}
                     <ActiveClassLink to="/Library">Library</ActiveClassLink>
-
                     <ActiveClassLink to="/events">Events</ActiveClassLink>
                 </ul>
             </nav>

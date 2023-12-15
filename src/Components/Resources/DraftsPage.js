@@ -4,7 +4,7 @@ import PostService from "../../Services/PostService";
 import ResourceTable from "./ResourceTable";
 import CreatenewResource from "./CreateResource";
 
-export default function ResourcesPage() {
+export default function DraftsPage() {
 
     const [posts, setPosts] = useState([]);
     const [resources, setResources] = useState([]);
