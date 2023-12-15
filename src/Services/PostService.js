@@ -4,7 +4,7 @@ const BASE_URL = 'https://656d0381e1e03bfd572ee9ba.mockapi.io/ReactApp';
 // const BASE_URL = 'https://656d0381e1e03bfd572ee9b.mockapi.io/ReactApp';
 
 const PostService = {
-  getAllPosts: async () => {
+  getAll: async () => {
     try {
       const response = await axios.get(`${BASE_URL}/hobby`, {
         headers: { 'content-type': 'application/json' }
@@ -20,7 +20,7 @@ const PostService = {
    * @param {Number} id The ID for the post to get
    * @returns post associated with the given ID
    */
-  getPostWithId: async (id) => {
+  getById: async (id) => {
     try {
       const response = await axios.get(`${BASE_URL}/hobby/${id}`, {
         headers: { 'content-type': 'application/json' }
@@ -31,7 +31,7 @@ const PostService = {
     }
   },
 
-  addPost: async (post) => {
+  add: async (post) => {
     try {
       const response = await axios.post(`${BASE_URL}/hobby`, post, {
         headers: { 'content-type': 'application/json' }
@@ -42,7 +42,7 @@ const PostService = {
     }
   },
 
-  updatePost: async (updatedPost) => {
+  update: async (updatedPost) => {
     try {
       const response = await axios.put(`${BASE_URL}/hobby/${updatedPost.id}`, updatedPost, {
         headers: { 'content-type': 'application/json' }
@@ -53,7 +53,7 @@ const PostService = {
     }
   },
 
-  deletePost: async (id) => {
+  delete: async (id) => {
     try {
       await axios.delete(`${BASE_URL}/hobby/${id}`, {
         headers: { 'content-type': 'application/json' }

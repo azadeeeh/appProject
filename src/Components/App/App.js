@@ -69,7 +69,7 @@ const App = () => {
       <Routes>
         <Route path='/Drafts' element={<ResourcesPage />} />
         <Route path='/Hobbies' element={<PostsPage showAddPost={true} />} />
-        <Route path='/' element={<PostsPage showAddPost={true} />} />
+        <Route path='/' element={<PostsPage showAddPost={false} />} />
         {/* <Route index element={<CreatePost addNewPost={handleAddPost} categories={categories} />} />
         <Route index element={<PostList posts={filteredPosts} />} /> */}
         <Route path="/create-event" element={<CreateEvent />} />

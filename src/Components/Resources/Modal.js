@@ -8,8 +8,8 @@ const Modal = ({ isOpen, closeModal, hobby }) => {
                 <div className="modal">
                     <div className="modal-content">
                         <span className="close" onClick={closeModal}>&times;</span>
-                        <h2>{hobby}</h2>
-                        <p>Modal text related to the selected hobby.</p>
+                        <h2>{hobby.title}</h2>
+                        <p>{hobby.content}</p>
                     </div>
                 </div>
             )}

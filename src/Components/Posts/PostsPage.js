@@ -13,7 +13,7 @@ export default function PostsPage({ showAddPost }) {
 
     useEffect(() => {
         async function fetchPosts() {
-            await PostService.getAllPosts()
+            await PostService.getAll()
                 .then(fetchedPosts => {
                     setPosts(fetchedPosts);
                     setFilteredPosts(fetchedPosts);
@@ -25,7 +25,7 @@ export default function PostsPage({ showAddPost }) {
     }, []);
 
     const handleAddPost = async (newPost) => {
-        PostService.addPost(
+        PostService.add(
             newPost
         ).then((addedPost) => {
             setPosts(prevPosts => [addedPost, ...prevPosts]);

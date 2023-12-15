@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import "./ResourceTable.css"
 import Modal from "./Modal"
+import CustomRating from '../CustomStarRating/StarRating.js';
+import ResourceService from '../../Services/ResourceService.js';
+import dateFormat, { masks } from 'dateformat';
 
-const ResourceTable = ({resourcess, posts}) => {
+const ResourceTable = ({ resources, posts }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedHobby, setSelectedHobby] = useState('');
 
-  const resources = [
-    { id: 1, resource: 'Link 1', hobby: 'Reading', rating: 4, date: '2023-12-01' },
-    { id: 2, resource: 'Link 2', hobby: 'Gardening', rating: 5, date: '2023-12-05' },
-    // Add more resource objects as needed
-  ];
-
-  const openModal = (hobby) => {
-    setSelectedHobby(hobby);
+  const openModal = (hobbyId) => {
+    setSelectedHobby(posts.find(hobbyItem => hobbyItem.id === hobbyId));
     setModalOpen(true);
   };
 
@@ -36,22 +33,21 @@ const ResourceTable = ({resourcess, posts}) => {
           {resources.map((item) => (
             <tr key={item.id}>
               <td>
-                <a href={item.resource} target="_blank" rel="noopener noreferrer">
-                  {item.resource}
-                </a>
+                {item.content}
               </td>
               <td>
-                <button onClick={() => openModal(item.hobby)}>{item.hobby}</button>
+                <button onClick={() => { openModal(item.hobbyId) }}>{posts.find(hobbyItem => hobbyItem.id === item.hobbyId).title}</button>
               </td>
-              <td>{item.rating}</td>
-              <td>{item.date}</td>
+              <td><CustomRating canSpin={true} entity={item} entityService={ResourceService} useRandomUserId={true} starCount={5} averageStarDeciamlPoint={1} /></td>
+              <td>
+                {dateFormat(new Date(item.date * 1000), "dd-mm-yyyy")}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
       {modalOpen && (
-        <Modal isOpen={modalOpen} closeModal={closeModal} />
+        <Modal isOpen={modalOpen} closeModal={closeModal} hobby={selectedHobby} />
       )}
     </div>
   );

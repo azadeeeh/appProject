@@ -43,4 +43,5 @@
 .navbar li:hover {
     background-color: #ccc;
     transition-duration: 500ms;
+    cursor: pointer;
 }

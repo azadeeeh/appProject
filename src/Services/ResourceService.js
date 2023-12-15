@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'https://6577ba0a197926adf62eb73e.mockapi.io/ReactApp';
 
 const ResourceService = {
-  getAllResrouces: async () => {
+  getAll: async () => {
     try {
       const response = await axios.get(`${BASE_URL}/resource`, {
         headers: { 'content-type': 'application/json' }
@@ -19,7 +19,7 @@ const ResourceService = {
    * @param {Number} id The ID for the resource to get
    * @returns resource associated with the given ID
    */
-  getResourceWithId: async (id) => {
+  getById: async (id) => {
     try {
       const response = await axios.get(`${BASE_URL}/resource/${id}`, {
         headers: { 'content-type': 'application/json' }
@@ -30,9 +30,9 @@ const ResourceService = {
     }
   },
 
-  addResource: async (resource) => {
+  add: async (resource) => {
     try {
-      const response = await axios.resource(`${BASE_URL}/resource`, resource, {
+      const response = await axios.post(`${BASE_URL}/resource`, resource, {
         headers: { 'content-type': 'application/json' }
       });
       return response.data;
@@ -41,7 +41,7 @@ const ResourceService = {
     }
   },
 
-  updateResource: async (updatedresource) => {
+  update: async (updatedresource) => {
     try {
       const response = await axios.put(`${BASE_URL}/resource/${updatedresource.id}`, updatedresource, {
         headers: { 'content-type': 'application/json' }
@@ -52,7 +52,7 @@ const ResourceService = {
     }
   },
 
-  deleteResource: async (id) => {
+  delete: async (id) => {
     try {
       await axios.delete(`${BASE_URL}/resource/${id}`, {
         headers: { 'content-type': 'application/json' }
