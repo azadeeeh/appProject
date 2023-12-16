@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // Import React and useState hook
 
+
+// Define the CreatePost functional component with addNewPost and categories props
 
 const CreatePost = ({ addNewPost, categories }) => {
   const [post, setPost] = useState([]);
 
+  // Function to handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault();
-    addNewPost(post);
+    event.preventDefault(); // Prevent default form submission behavior
+    addNewPost(post); // Call addNewPost function with current post state
     setPost({ title: '', content: '', category: '' }); // Reset the form
   };
 
-  return (
+  return (// Start of JSX block for rendering the form
     <form onSubmit={handleSubmit} className="post-form">
       <input
         type="text"
@@ -36,7 +39,7 @@ const CreatePost = ({ addNewPost, categories }) => {
           <option key={index} value={category}>{category}</option>
         ))}
       </select>
-      <button type="submit" className="post-submit">Add Post</button>
+      <button className="post-submit" type="submit" >Add Post</button>
     </form>
   );
 };
