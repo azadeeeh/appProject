@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import PostService from "../../Services/PostService"
 
 // Source for the custom rating component: https://github.com/chibuike07/star_rating
 
@@ -35,32 +34,37 @@ const RatingWrapper = styled.aside`
         }
       `;
 
-export default function CustomRating({ canSpin, post, loggedInUser, starCount, averageStarDeciamlPoint }) {
+export default function CustomRating({ canSpin, entity, entityService, loggedInUser, useRandomUserId, starCount, averageStarDeciamlPoint }) {
     const [rating, setRating] = useState(null);
     const [hover, setHover] = useState(null);
     const [shouldSpin, setShouldSpin] = useState(canSpin);
 
     let ratesAverage = 0;
-    if (post.rates.length > 0)
-        ratesAverage = post.rates.reduce((sum, prevRate) => { return sum + prevRate }, 0) / post.rates.length;
+    if (entity.rates.length > 0)
+        ratesAverage = entity.rates.reduce((sum, prevRate) => { return sum + prevRate }, 0) / entity.rates.length;
+
+    if (useRandomUserId){
+        loggedInUser = {}
+        loggedInUser.id = Math.floor(Math.random() * 1000);
+    }
 
     useEffect(() => {
-        if (post.userRateId.includes(loggedInUser.id)) {
-            setRating(post.rates[post.userRateId.findIndex((userId) => userId === loggedInUser.id)]);
+        if (entity.userRateIds.includes(loggedInUser.id)) {
+            setRating(entity.rates[entity.userRateIds.findIndex((userId) => userId === loggedInUser.id)]);
             setShouldSpin(false);
         }
-    }, [loggedInUser.id, post.rates, post.userRateId, rating])
+    }, [loggedInUser.id, entity.rates, entity.userRateIds, rating])
 
     const handleOnClick = (newRating) => {
-        if (!post.userRateId.includes(loggedInUser.id)) {
-            post.userRateId.push(loggedInUser.id);
-            post.rates.push(newRating);
+        if (!entity.userRateIds.includes(loggedInUser.id)) {
+            entity.userRateIds.push(loggedInUser.id);
+            entity.rates.push(newRating);
         }
         else {
-            let userIndexInRatings = post.userRateId.findIndex((userId) => userId === loggedInUser.id);
-            post.rates[userIndexInRatings] = newRating;
+            let userIndexInRatings = entity.userRateIds.findIndex((userId) => userId === loggedInUser.id);
+            entity.rates[userIndexInRatings] = newRating;
         }
-        PostService.update(post);
+        entityService.update(entity);
         setShouldSpin(false);
         setRating(newRating);
     }

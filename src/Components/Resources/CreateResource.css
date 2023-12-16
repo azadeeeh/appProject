@@ -1,0 +1,70 @@
+.newResource-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Input Field Styling */
+.newResource-title,
+.newResource-content,
+.newResource-hobby {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Posts Field Styling */
+.newResource-hobby {
+    background-color: #4A90E2;
+    /* Blue background */
+    color: white;
+    /* White text */
+    padding: 10px 15px;
+    /* Padding for size */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 1em;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor */
+    transition: background-color 0.3s ease;
+    /* Transition for hover effect */
+}
+
+.newResource-hobby:hover {
+    background-color: white;
+    /* Blue background */
+    color: #4A90E2;
+    /* White text */
+}
+
+.newResource-hobby:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #357ABD;
+    /* Border color on focus */
+}
+
+/* Submit Button Styling */
+.newResource-form button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.newResource-form button:hover {
+    background-color: #357ABD;
+}
