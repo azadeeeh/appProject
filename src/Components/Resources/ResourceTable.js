@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./ResourceTable.css"
-import Modal from "./Modal"
+// import Modal from "./Modal"
 import CustomRating from '../CustomStarRating/StarRating.js';
 import ResourceService from '../../Services/ResourceService.js';
 import dateFormat from 'dateformat';
 
-const ResourceTable = ({ resources, posts }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedHobby, setSelectedHobby] = useState('');
+// const ResourceTable = ({ resources, posts }) => {
+const ResourceTable = ({ resources }) => {
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const [selectedHobby, setSelectedHobby] = useState('');
 
-  const openModal = (hobbyId) => {
-    setSelectedHobby(posts.find(hobbyItem => hobbyItem.id === hobbyId));
-    setModalOpen(true);
-  };
+  // const openModal = (hobbyId) => {
+  //   setSelectedHobby(posts.find(hobbyItem => hobbyItem.id === hobbyId));
+  //   setModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalOpen(false);
+  // };
 
   return (
     <div>
@@ -24,7 +25,7 @@ const ResourceTable = ({ resources, posts }) => {
         <thead>
           <tr>
             <th>Resource</th>
-            <th>Hobby</th>
+            <th>Category</th>
             <th>Rating</th>
             <th>Date</th>
           </tr>
@@ -36,7 +37,7 @@ const ResourceTable = ({ resources, posts }) => {
                 {item.content}
               </td>
               <td>
-                <button onClick={() => { openModal(item.hobbyId) }}>{posts.find(hobbyItem => hobbyItem.id === item.hobbyId).title}</button>
+                {item.category}
               </td>
               <td><CustomRating canSpin={true} entity={item} entityService={ResourceService} useRandomUserId={true} starCount={5} averageStarDeciamlPoint={1} /></td>
               <td>
@@ -46,9 +47,9 @@ const ResourceTable = ({ resources, posts }) => {
         </tbody>
       </table>
 
-      {modalOpen && (
+      {/* {modalOpen && (
         <Modal isOpen={modalOpen} closeModal={closeModal} hobby={selectedHobby} />
-      )}
+      )} */}
     </div>
   );
 };

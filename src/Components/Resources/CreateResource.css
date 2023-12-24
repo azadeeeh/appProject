@@ -10,7 +10,7 @@
 /* Input Field Styling */
 .newResource-title,
 .newResource-content,
-.newResource-hobby {
+.newResource-category {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 15px;
@@ -20,7 +20,7 @@
 }
 
 /* Posts Field Styling */
-.newResource-hobby {
+.newResource-category {
     background-color: #4A90E2;
     /* Blue background */
     color: white;
@@ -39,14 +39,14 @@
     /* Transition for hover effect */
 }
 
-.newResource-hobby:hover {
+.newResource-category:hover {
     background-color: white;
     /* Blue background */
     color: #4A90E2;
     /* White text */
 }
 
-.newResource-hobby:focus {
+.newResource-category:focus {
     outline: none;
     /* Remove default focus outline */
     border-color: #357ABD;
