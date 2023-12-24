@@ -39,10 +39,10 @@ export default function DraftsPage() {
     }, []);
 
     const handleAddResource = async (newResource) => {
-        newResource.date = new Date().getTime();
+        newResource.date = new Date().getTime() / 1000;
         newResource.userRateIds = [];
         newResource.rates = [];
-        
+
         ResourceService.add(
             newResource
         ).then((addedResource) => {
