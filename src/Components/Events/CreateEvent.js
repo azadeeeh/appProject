@@ -37,6 +37,7 @@ const CreateEvent = newEvent => {
         location: '',
         activity: '',
         spacesAvailable: '',
+
     });
 
     const [createdEvent, setCreatedEvent] = useState(null);

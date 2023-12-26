@@ -20,21 +20,23 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
                 />
             </label>
             <br />
-
-            <select
-                className="inputStyle"
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                required
-            >
-                <option value="" disabled>Select a category:</option>
-                {categories.map((category, index) => (
-                    <option key={index} value={category}>
-                        {category}
-                    </option>
-                ))}
-            </select>
+            <label className="labelStyle">
+                Category:
+                <select
+                    className="inputStyle"
+                    name="hobbyType"
+                    value={formData.hobbyType}
+                    onChange={handleChange}
+                    required
+                >
+                    <option value="" disabled>Select a category</option>
+                    {categories.map((category, index) => (
+                        <option key={index} value={category}>
+                            {category}
+                        </option>
+                    ))}
+                </select>
+            </label>
 
             <br />
 

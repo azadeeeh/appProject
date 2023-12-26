@@ -28,7 +28,7 @@ const CreateResource = ({ addNewResource }) => {
         className="newResource-category"
         required
       >
-        <option value="">Select a category</option>
+        <option value="">Select a category:</option>
         {categories.map((category, index) => (
           <option key={index} value={category}>{category}</option>
         ))}
