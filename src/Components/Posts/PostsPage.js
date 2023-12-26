@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import EventButton from "../Events/EventButton";
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import CreatePost from "./CreatePost";
@@ -46,9 +45,10 @@ export default function PostsPage({ showAddPost }) {
 
     return (
         <>
-            <EventButton />
-            {showAddPost && <CreatePost addNewPost={handleAddPost} categories={categories} />}
+
             <PostFilter categories={categories} filterPosts={filterPosts} />
+            {showAddPost && <CreatePost addNewPost={handleAddPost} categories={categories} />}
+
             <PostList posts={filteredPosts} />
         </>
     )

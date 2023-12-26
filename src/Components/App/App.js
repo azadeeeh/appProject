@@ -5,12 +5,14 @@ import Navbar from '../NavBar/navbar';
 import PostsPage from '../Posts/PostsPage';
 import DraftsPage from '../Resources/DraftsPage';
 import LibraryPage from '../Resources/LibraryPage';
+import EventButton from '../Events/EventButton';
 
 const App = () => {
   return (
     <div>
       <header>
         <Navbar />
+        <EventButton />
       </header>
 
       <hr className="hrStyle" />
