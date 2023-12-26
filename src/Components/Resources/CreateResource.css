@@ -21,12 +21,11 @@
 
 /* Posts Field Styling */
 .newResource-category {
-    background-color: #4A90E2;
+    background-color: #AE784F;
     /* Blue background */
     color: white;
     /* White text */
-    padding: 10px 15px;
-    /* Padding for size */
+    height:50px;
     border: none;
     /* No border */
     border-radius: 5px;
@@ -39,23 +38,23 @@
     /* Transition for hover effect */
 }
 
+
+
 .newResource-category:hover {
-    background-color: white;
-    /* Blue background */
-    color: #4A90E2;
-    /* White text */
+    background-color: #F5EBE3;
+    color: #AE784F;
 }
 
 .newResource-category:focus {
     outline: none;
     /* Remove default focus outline */
-    border-color: #357ABD;
+    border-color:#AE784F;
     /* Border color on focus */
 }
 
 /* Submit Button Styling */
 .newResource-form button {
-    background-color: #4A90E2;
+    background-color: #AE784F;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -66,5 +65,9 @@
 }
 
 .newResource-form button:hover {
-    background-color: #357ABD;
+    background-color: #F5EBE3;
+    color: #AE784F;
 }
+
+
+

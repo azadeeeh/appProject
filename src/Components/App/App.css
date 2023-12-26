@@ -83,6 +83,7 @@ img.logo:hover {
     /* Pointer cursor */
     transition: background-color 0.3s ease;
     /* Transition for hover effect */
+    height:50px;
 }
 
 .post-category:hover {
