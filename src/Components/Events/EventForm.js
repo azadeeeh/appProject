@@ -1,7 +1,7 @@
 
 
 import '../App/App.css';
-
+import categories from '../../Types/categories'
 
 const EventForm = ({ formData, handleChange, handleSubmit }) => {
 
@@ -9,7 +9,7 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
 
         <form className="formStyle" onSubmit={handleSubmit}>
             <label className="labelStyle">
-                Hobby Type:
+                Hobby Title:
                 <input
                     className="inputStyle"
                     type="text"
@@ -19,6 +19,23 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
                     required
                 />
             </label>
+            <br />
+
+            <select
+                className="inputStyle"
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                required
+            >
+                <option value="" disabled>Select a category:</option>
+                {categories.map((category, index) => (
+                    <option key={index} value={category}>
+                        {category}
+                    </option>
+                ))}
+            </select>
+
             <br />
 
             <label className="labelStyle">

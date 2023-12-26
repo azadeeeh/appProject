@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; // Import React and useState hook
 
 
+
 // Define the CreatePost functional component with addNewPost and categories props
 
 const CreatePost = ({ addNewPost, categories }) => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import "./CreateResource.css"
-import categories from '../../Types/categories'
+import "./CreateResource.css";
+import categories from '../../Types/categories';
 
 const CreateResource = ({ addNewResource, posts }) => {
   const [newResource, setNewResource] = useState([]);
@@ -20,7 +20,7 @@ const CreateResource = ({ addNewResource, posts }) => {
         className="newResource-content"
         required
       />
-      
+
       <select
         value={newResource.category}
         onChange={(e) => setNewResource({ ...newResource, category: e.target.value })}

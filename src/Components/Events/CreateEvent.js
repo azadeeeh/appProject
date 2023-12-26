@@ -13,7 +13,8 @@ const EventsList = ({ events, removeEvent }) => {
         <ul>
             {events.map(event => (
                 <li key={event.id}>
-                    <p>Hobby Type: {event.hobbyType}</p>
+                    <p>Hobby Title: {event.hobbyType}</p>
+                    <p>Category: {event.category}</p>
                     <p>Date: {event.date}</p>
                     <p>Time: {event.time}</p>
                     <p>Location: {event.location}</p>
