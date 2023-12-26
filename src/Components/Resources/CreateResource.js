@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./CreateResource.css"
 import categories from '../../Types/categories'
 
-const CreateResource = ({ addNewResource, posts }) => {
+const CreateResource = ({ addNewResource }) => {
   const [newResource, setNewResource] = useState([]);
 
   const handleSubmit = (event) => {

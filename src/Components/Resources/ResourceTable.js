@@ -4,21 +4,11 @@ import "./ResourceTable.css"
 import CustomRating from '../CustomStarRating/StarRating.js';
 import ResourceService from '../../Services/ResourceService.js';
 import dateFormat from 'dateformat';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-// const ResourceTable = ({ resources, posts }) => {
-const ResourceTable = ({ resources }) => {
-  // const [modalOpen, setModalOpen] = useState(false);
-  // const [selectedHobby, setSelectedHobby] = useState('');
-
-  // const openModal = (hobbyId) => {
-  //   setSelectedHobby(posts.find(hobbyItem => hobbyItem.id === hobbyId));
-  //   setModalOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
-
+const ResourceTable = ({ resources, handleDelResource }) => {
   return (
     <div>
       <table>
@@ -28,6 +18,7 @@ const ResourceTable = ({ resources }) => {
             <th>Category</th>
             <th>Rating</th>
             <th>Date</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -41,15 +32,16 @@ const ResourceTable = ({ resources }) => {
               </td>
               <td><CustomRating canSpin={true} entity={item} entityService={ResourceService} useRandomUserId={true} starCount={5} averageStarDeciamlPoint={1} /></td>
               <td>
-                {dateFormat(new Date(item.date * 1000), "dd-mm-yyyy")}</td>
+                {dateFormat(new Date(item.date * 1000), "dd-mm-yyyy")}
+              </td>
+              <td>
+                <button onClick={() => { handleDelResource(item) }}><FontAwesomeIcon icon={faTrash} /></button>
+                {/* <button><FontAwesomeIcon icon={faEdit}/></button> */}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-
-      {/* {modalOpen && (
-        <Modal isOpen={modalOpen} closeModal={closeModal} hobby={selectedHobby} />
-      )} */}
     </div>
   );
 };
