@@ -8,7 +8,38 @@ export default function PostsPage({ showAddPost }) {
 
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
-    const [categories,] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking']); // Example categories
+    const [categories,] = useState(['Crafts', 'Outdoor', 'Technology', 'Cooking',"Drawing and Painting",
+    "Photography",
+    "Writing",
+    "Reading",
+    "Cooking",
+    "Gardening",
+    "Knitting and Crocheting",
+    "Outdoor",
+    "Woodworking",
+    "Sculpting",
+    "Ski and Snowboard",
+    "Playing Musical Instruments",
+    "Dancing",
+    "Hiking",
+    "Camping",
+    "Fishing",
+    "Bird Watching",
+    "Yoga and Meditation",
+    "Fitness and Exercise",
+    "Running",
+    "Cycling",
+    "Swimming",
+    "Singing",
+    "Acting and Theater",
+    "DIY and Crafts",
+    "Collecting (Stamps, Coins, etc.)",
+    "Gaming",
+    "Traveling",
+    "Chess and Board Games",
+    "Model Building",
+    "Metalworking",
+    "Fashion Design"]); // Example categories
 
     useEffect(() => {
         async function fetchPosts() {
