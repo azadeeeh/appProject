@@ -1,40 +1,29 @@
 import React, { useState, useEffect } from "react";
 import ResourceService from "../../Services/ResourceService";
-// import PostService from "../../Services/PostService";
 import ResourceTable from "./ResourceTable";
 import CreatenewResource from "./CreateResource";
+import categories from "../../Types/categories"
+import ResourcesFilter from "./ResourcesFilter";
 
 export default function DraftsPage() {
 
-    // const [posts, setPosts] = useState([]);
     const [resources, setResources] = useState([]);
-    // const [isPostsLoading, setIsPostsLoading] = useState(false);
+    const [filteredResources, setFilteredResources] = useState([]);
     const [isResourcesLoading, setIsResourcesLoading] = useState(false);
 
     useEffect(() => {
-        // async function fetchPosts() {
-        //     setIsPostsLoading(true);
-        //     await PostService.getAll()
-        //         .then(fetchedPosts => {
-        //             setPosts(fetchedPosts);
-        //             setIsPostsLoading(false);
-        //         }).catch((err) => {
-        //             console.error("Error happened while fetching posts: ", err.message)
-        //             setIsPostsLoading(false);
-        //         })
-        // }
         async function fetchResources() {
             setIsResourcesLoading(true);
             await ResourceService.getAll()
                 .then(fetchedResources => {
                     setResources(fetchedResources);
+                    setFilteredResources(fetchedResources);
                     setIsResourcesLoading(false);
                 }).catch((err) => {
                     console.error("Error happened while fetching resources: ", err.message)
                     setIsResourcesLoading(false);
                 })
         }
-        // fetchPosts();
         fetchResources();
     }, []);
 
@@ -54,18 +43,24 @@ export default function DraftsPage() {
 
     const handleRemoveResource = async (res2Del) => {
         ResourceService.delete(res2Del.id);
-        setResources(resources.filter((res)=>
-        {
+        setResources(resources.filter((res) => {
             return res.id !== res2Del.id;
         }))
     }
 
+    const filterResources = (resourceCategory) => {
+        if (!resourceCategory || resourceCategory === '') {
+            setFilteredResources(resources);
+        } else {
+            setFilteredResources(resources.filter(resource => resource.category === resourceCategory));
+        }
+    };
+
     return (
         <>
-            {/* {(!isPostsLoading && !isResourcesLoading) && <CreatenewResource addNewResource={handleAddResource} />}
-            {(!isPostsLoading && !isResourcesLoading) && <ResourceTable resources={resources} handleDelResource={handleRemoveResource} />} */}
+            <ResourcesFilter handleFilterResrouces={filterResources} categories={categories} />
             {!isResourcesLoading && <CreatenewResource addNewResource={handleAddResource} />}
-            {!isResourcesLoading && <ResourceTable resources={resources} handleDelResource={handleRemoveResource} />}
+            {!isResourcesLoading && <ResourceTable resources={filteredResources} handleDelResource={handleRemoveResource} />}
         </>
     )
 }
