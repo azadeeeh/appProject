@@ -15,7 +15,7 @@ const App = () => {
         <EventButton />
       </header>
 
-      <hr className="hrStyle" /> {/* */}
+      <hr className="hrStyle" /> {/*a visual separation or break between the header and the main content and it used hrstyle for the CSS format */}
 
       {/* <EventButton /> */}
 
