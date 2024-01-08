@@ -66,7 +66,7 @@ export default function PostsPage({ showAddPost }) { /*showAddPost is a prop whi
     }
 
     const filterPosts = (category) => { /*is responsible for updating the state FilteredPost given the category*/
-        if (!category || category === '') {
+        if (!category || category === '') { /*if the category is null or false, it update the filterpost state on the whole posts otherwise first filter the posts and then update the filterpost on the filtered posts*/
             setFilteredPosts(posts);
         } else {
             const filtered = posts.filter(post => post.category === category);
