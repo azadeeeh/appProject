@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #E7C5AB;
+    background-color: #C0E6DF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
     margin: 0px;
@@ -14,7 +14,7 @@ header {
     display: flex;
     flex-direction: row;
     
-    background-color:#F5EBE3;
+    background-color:#dff5f1;
     
 }
 
@@ -28,7 +28,7 @@ h2 {
 
 img.logo {
     width: auto;
-    height: 3.5rem;
+    height: 3.7rem;
     margin: 10px;
     padding: 10px;
     transition-duration: 250ms;
@@ -41,13 +41,13 @@ img.logo:hover {
 }
 
 .hrStyle {
-    border: 0.2rem solid #F5EBE3;
+    border: 0.2rem solid #dff5f1;
     margin: 0;
 }
 
 /* Enhanced Form Styling */
 .post-form {
-    background-color:  #F5EBE3;
+    background-color:  #dff5f1;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,7 +56,17 @@ img.logo:hover {
 }
 
 /* Input Field Styling */
-.post-title,
+.post-title{
+
+    width: 100%;
+    padding: 12px 15px;
+    margin-left: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
 .post-content,
 .post-category {
     width: 100%;
@@ -69,7 +79,7 @@ img.logo:hover {
 
 /* Category Field Styling */
 .post-category {
-    background-color: #AE784F;;
+    background-color: #008080;
     color: white;
     padding: 10px 15px;
     /* Padding for size */
@@ -83,12 +93,13 @@ img.logo:hover {
     /* Pointer cursor */
     transition: background-color 0.3s ease;
     /* Transition for hover effect */
-    height:50px;
+    height: 40px;
+    margin-left: 2px;
 }
 
 .post-category:hover {
     background-color: white;
-    color: #AE784F;;
+    color: #008080;
 }
 
 .post-category:focus {
@@ -100,7 +111,7 @@ img.logo:hover {
 
 /* Submit Button Styling */
 .post-form button {
-    background-color: #AE784F;
+    background-color: #008080;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -112,7 +123,7 @@ img.logo:hover {
 
 .post-form button:hover {
     background-color: #F5EBE3;
-    color: #AE784F;
+    color: #008080;
 }
 
 
@@ -169,7 +180,7 @@ li small {
 
 /* Filter Category Button Styling */
 .filter-category-button {
-    background-color: #AE784F;
+    background-color: #008080;
    
     color: white;
    
@@ -193,7 +204,7 @@ li small {
 
 .filter-category-button:hover {
     background-color: white;
-    color: #AE784F;
+    color: #008080;
     /* Darker blue on hover */
 }
 
@@ -205,7 +216,7 @@ footer {
 /*event button styling*/
 .event-button {
 
-    background-color: #AE784F;
+    background-color: #008080;
     color: #F5EBE3;
     text-decoration: none;
     padding: 10px 15px;
@@ -217,16 +228,15 @@ footer {
     /* Smooth transition for hover effects */
     margin-right: 20px;
     position: relative;
-    top:20px;
+    top: 30px;
     
-
 
 }
 
 .event-button:hover {
     background-color: #F5EBE3;
-    color: #AE784F;
-    
+    color: #008080;
+    margin-left:48px;
 }
 
 .event-main{

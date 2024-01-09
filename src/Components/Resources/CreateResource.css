@@ -21,7 +21,7 @@
 
 /* Posts Field Styling */
 .newResource-category {
-    background-color: #AE784F;
+    background-color: #008080;
     /* Blue background */
     color: white;
     /* White text */
@@ -36,13 +36,14 @@
     /* Pointer cursor */
     transition: background-color 0.3s ease;
     /* Transition for hover effect */
+    margin-left: 2px;
 }
 
 
 
 .newResource-category:hover {
     background-color: #F5EBE3;
-    color: #AE784F;
+    color: #008080;
 }
 
 .newResource-category:focus {
@@ -54,7 +55,7 @@
 
 /* Submit Button Styling */
 .newResource-form button {
-    background-color: #AE784F;
+    background-color: #008080;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -62,11 +63,12 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 
+
 }
 
 .newResource-form button:hover {
     background-color: #F5EBE3;
-    color: #AE784F;
+    color: #008080;
 }
 
 

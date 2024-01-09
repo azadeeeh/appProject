@@ -1,15 +1,7 @@
 .navbar {
     margin: 0 auto;
-    color: #825331;
+    color: #008080;
     display: flex;  
-    position: relative;
-    right:20%;
-   
-
-    
-    
-   
-
 }
 
 .navbar a {
@@ -24,7 +16,7 @@
     display: flex;
     transition-duration: 500ms;
     position: relative;
-    left: 220px;
+   
 }
 
 .navbar ul {

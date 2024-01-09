@@ -1,5 +1,5 @@
 .event-main{
-    background-color: #F5EBE3;
+    background-color: #dff5f1;
     height:100%;
     width:90%;
     z-index: 2;
@@ -14,7 +14,7 @@
 }
 
 .remove-button{
-    background-color: #AE784F;
+    background-color: #008080;
     color: #F5EBE3;
     border-radius: 5px;
     border: none;
@@ -22,7 +22,7 @@
 }
 
 .remove-button:hover {
-    color: #B07B53;
+    color: #008080;
     background-color: #F5EBE3;
     cursor: pointer;
 }
@@ -62,7 +62,7 @@ select{
 }
 
 .create-event-button{
-    background-color: #AE784F;
+    background-color: #008080;
     color: #F5EBE3;
     text-decoration: none;
     padding: 10px 15px;
@@ -84,7 +84,7 @@ select{
 
 .create-event-button:hover {
     background-color: #F5EBE3;
-    color: #AE784F;
+    color: #008080;
 
 }
 
