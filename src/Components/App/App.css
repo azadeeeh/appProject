@@ -47,12 +47,22 @@ img.logo:hover {
 
 /* Enhanced Form Styling */
 .post-form {
-    background-color:  #dff5f1;
+    background-color: #dff5f1;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+    max-width: 800px; /* Increase the max-width for a larger form */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Add this to make it a block-level element */
+    margin: 0 auto; /* Adjusted margin to center horizontally */
+
+
+}
+
+.post-form button:hover {
+    background-color: #F5EBE3;
+    color: #008080;
 }
 
 /* Input Field Styling */
@@ -125,6 +135,58 @@ img.logo:hover {
     background-color: #F5EBE3;
     color: #008080;
 }
+
+
+/* Add this style for the category container */
+.category-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Adjust the width of the category items to fit four in one row */
+.category-item {
+    position: relative;
+    flex: 0 1 calc(25% - 20px); /* Adjust the flex property to limit to 4 items in a row */
+    max-width: calc(25% - 20px); /* Adjust the max-width based on your design */
+    margin: 10px; /* Adjust the margin for spacing between items */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Add this style for the category images */
+.category-item img {
+
+    border-radius: 8px;
+    transition: transform 0.2s ease; /* Add smooth transition for a visual effect on hover */
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border: 2px solid transparent; /* Add a transparent border initially */
+
+}
+
+/* Add this style for the hover effect */
+.category-item:hover img {
+    transform: scale(1.05); /* Scale up the image on hover for a visual effect */
+}
+
+
+/* Add this style for the border when clicked */
+.category-item.clicked img {
+    border: 8px solid #AE784F; /* Set the border color on click */
+}
+
+.category-item p {
+    margin-top: 8px; /* Adjust the margin for spacing between image and text */
+    font-size: 14px; /* Adjust the font size based on your design */
+    color: #008080 ; /* Adjust the color based on your design */
+    text-align: center;
+}
+
+
+
 
 
 /* Centering the Post List */

@@ -5,7 +5,16 @@ import React, { useState } from 'react'; // Import React and useState hook
 // Define the CreatePost functional component with addNewPost and categories props
 
 const CreatePost = ({ addNewPost, categories }) => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({
+    title: '',
+    content: '',
+    category: '',
+  });
+  
+  
+  const handleItemClick = (categoryName) => {
+    setPost({ ...post, category: categoryName });
+  };
 
   // Function to handle form submission
   const handleSubmit = (event) => {
@@ -30,7 +39,22 @@ const CreatePost = ({ addNewPost, categories }) => {
         className="post-content"
       />
 
-      <select
+
+      <div className="category-container">
+        {categories.map((category, index) => (
+          <div
+            key={index}
+            className={`category-item ${post.category === category.name ? 'clicked' : ''}`}
+            onClick={() => handleItemClick(category.name)}
+          >
+            <img src={`${process.env.PUBLIC_URL}/${category.image}`} alt={category.name} />
+            <p>{category.name}</p>
+          </div>
+        ))}
+      </div>
+
+
+      {/*<select
         value={post.category}
         onChange={(e) => setPost({ ...post, category: e.target.value })}
         className="post-category"
@@ -39,7 +63,7 @@ const CreatePost = ({ addNewPost, categories }) => {
         {categories.map((category, index) => (
           <option key={index} value={category}>{category}</option>
         ))}
-      </select>
+        </select>*/}
       <button className="post-submit" type="submit" >Add Post</button>
     </form>
   );
