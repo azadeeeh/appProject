@@ -64,9 +64,9 @@ const App = () => {
         <Route path="/create-event" element={<CreateEvent />} />
       </Routes>
 
-      <footer>
+      {/* <footer>
         <p> Hobby Hut &copy; 2023</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

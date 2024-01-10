@@ -6,7 +6,6 @@ body {
     background-color: #C0E6DF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
-    margin: 0px;
     z-index: 1;
 }
 
@@ -291,9 +290,13 @@ li small {
 }
 
 footer {
+    position: relative;
+    width: 100vw;
     text-align: center;
     color: #AE784F;
-    margin-bottom: 5px;
+    /* top: 100vh; */
+    bottom: 0;
+    /* margin-bottom: 5px; */
 }
 
 /*event button styling*/
@@ -389,7 +392,7 @@ footer {
     .home-menu {
         flex-direction: column;
         transition-duration: 500ms;
-        margin: 2em auto;
+        margin: .5em auto;
     }
 
     .home-menu img {
