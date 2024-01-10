@@ -14,7 +14,6 @@ const Navbar = () => {
                     <ActiveClassLink to="/Hobbies">Hobbies</ActiveClassLink>
                     <ActiveClassLink to="/Drafts">Drafts</ActiveClassLink>
                     <ActiveClassLink to="/Library">Library</ActiveClassLink>
-
                 </ul>
             </nav>
         </>

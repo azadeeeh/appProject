@@ -35,14 +35,34 @@ const RatingWrapper = styled.aside`
       `;
 
 export default function CustomRating({ canSpin, entity, entityService, loggedInUser, useRandomUserId, starCount, averageStarDeciamlPoint }) {
+    /* The line `const [rating, setRating] = useState(null);` is using the `useState` hook in React to
+    create a state variable called `rating` and a corresponding setter function called `setRating`.
+    The initial value of the `rating` state is set to `null`. This state variable is used to keep
+    track of the current rating value selected by the user. The `setRating` function can be used to
+    update the value of the `rating` state. */
     const [rating, setRating] = useState(null);
+    /* The line `const [hover, setHover] = useState(null);` is using the `useState` hook in React to
+    create a state variable called `hover` and a corresponding setter function called `setHover`.
+    The initial value of the `hover` state is set to `null`. This state variable is used to keep
+    track of the current rating value that the user is hovering over. The `setHover` function can be
+    used to update the value of the `hover` state. */
     const [hover, setHover] = useState(null);
+    /* The line `const [shouldSpin, setShouldSpin] = useState(canSpin);` is using the `useState` hook
+    in React to create a state variable called `shouldSpin` and a corresponding setter function
+    called `setShouldSpin`. The initial value of the `shouldSpin` state is set to the value of the
+    `canSpin` prop that is passed to the component. This state variable is used to determine whether
+    the star icons should spin or not. The `setShouldSpin` function can be used to update the value
+    of the `shouldSpin` state. */
     const [shouldSpin, setShouldSpin] = useState(canSpin);
 
     let ratesAverage = 0;
     if (entity.rates.length > 0)
         ratesAverage = entity.rates.reduce((sum, prevRate) => { return sum + prevRate }, 0) / entity.rates.length;
 
+    /* This code block is checking if the `useRandomUserId` prop is true. If it is true, it generates a
+    random user ID for the `loggedInUser` object. The generated ID is a random number between 0 and
+    999. This is useful when testing the component and you want to simulate different users with
+    random IDs. */
     if (useRandomUserId){
         loggedInUser = {}
         loggedInUser.id = Math.floor(Math.random() * 1000);

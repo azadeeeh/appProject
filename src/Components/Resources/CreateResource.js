@@ -3,12 +3,14 @@ import "./CreateResource.css";
 import categories from '../../Types/categories';
 
 const CreateResource = ({ addNewResource }) => {
+  // State for the newResource that is going to be sent to the MockAPI
   const [newResource, setNewResource] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // The following function is given to this component as a prop from its parent
     addNewResource(newResource);
-    setNewResource({ content: '', category: '', date: '' }); // Reset the form
+    setNewResource({ content: '', category: '', date: '' }); // Reset the form with default resource values
   };
 
   return (

@@ -10,7 +10,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const ResourceTable = ({ resources, handleDelResource }) => {
   return (
-    <div>
+    <div style={{ overflowX: "auto" }}>
       <table>
         <thead>
           <tr>

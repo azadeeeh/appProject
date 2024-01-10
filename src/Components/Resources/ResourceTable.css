@@ -55,6 +55,7 @@ td:nth-child(5) button {
     border-radius: .5em;
     text-align: center;
     vertical-align: middle;
+    font-size: 1em;
 }
 
 td:nth-child(5) button:nth-child(1) {
@@ -104,11 +105,12 @@ td:nth-child(5) button:nth-child(2):hover:active {
 @media screen and (max-width: 600px) {
     table {
         width: 50%; /* Adjusted width for small screens */
+        margin: 0.75em;
     }
 
     td:nth-child(5) button {
         width: 2em;
         height: 2em;
-        font-size: 20px; /* Adjusted font size for small buttons */
+        font-size: .8em; /* Adjusted font size for small buttons */
     }
 }

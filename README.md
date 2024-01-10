@@ -24,6 +24,11 @@ Developer: Sina Jahromi
 
 Developer: Azadeh Zamani
 
+Below is a depiction of our components hierarchy along with their associated props:
+
+![Components Hierarchy](./RepositoryResources/ComponentsHierarchy.png)
+
+* We used [ReacTree](https://marketplace.visualstudio.com/items?itemName=ReacTreeDev.reactree) to generate the above image.
 
 ## Available Scripts
 
