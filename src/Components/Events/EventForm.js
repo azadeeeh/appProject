@@ -1,9 +1,8 @@
-
-
 import '../App/App.css';
 import categories from '../../Types/categories'
 
-//EventForm taking props for managing
+//EventForm taking formData, handleChange, handleSubmit props from createEvent 
+//EventForm shows a form for creating events
 
 const EventForm = ({ formData, handleChange, handleSubmit }) => {
 

@@ -29,7 +29,7 @@
 
 
 .formStyle {
-    width: 400px;
+    max-width: 400px;
     margin: auto;
 
    
@@ -94,10 +94,11 @@ select{
 
 @media screen and (max-width: 600px) {
     /* Adjust styles for screens smaller than 600px */
+  
     .event-main {
-        width: 100%;
-        padding: 20px;
-        
+        max-width: 100%;
+        position:relative;
+        margin-left:-23px;
         
     }
 
