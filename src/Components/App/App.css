@@ -153,6 +153,7 @@ img.logo:hover {
     max-width: calc(25% - 20px); /* Adjust the max-width based on your design */
     margin: 10px; /* Adjust the margin for spacing between items */
     cursor: pointer; /* Change cursor to pointer on hover */
+    text-align: center;
 }
 
 /* Add this style for the category images */
@@ -273,6 +274,7 @@ li small {
 footer {
     text-align: center;
     color: #AE784F;
+    margin-bottom: 5px;
 }
 
 /*event button styling*/
@@ -314,4 +316,47 @@ footer {
     border-radius: 10px;
     box-shadow: 0 5px 15px #825331;;
   
+}
+
+
+@media screen and (max-width: 600px) {
+    /* Adjust styles for screens smaller than 600px */
+    header {
+        flex-direction: column;
+        text-align: center;
+        width:100%;
+    }
+
+    img.logo {
+        width: auto;
+        height: 3.5rem;
+    }
+
+    .event-main {
+        width: 100%;
+        padding: 20px;
+      
+    }
+
+    .event-button {
+        margin: 10px 0;
+        top: 0;
+    }
+
+    .category-item img {
+
+        border-radius: 8px;
+        transition: transform 0.2s ease; /* Add smooth transition for a visual effect on hover */
+        max-width: 50px; /* Set a fixed width */
+        max-height: 50px; /* Set a fixed height */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+        border: 2px solid transparent; /* Add a transparent border initially */
+      
+    
+    }
+
+    .category-item p{
+        font-size:0.5em;
+        
+    }
 }

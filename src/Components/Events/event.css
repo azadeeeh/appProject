@@ -35,9 +35,7 @@
 };
 
 
-.create-event-button{
-    background-color: #825331;
-}
+
 
 
 
@@ -58,7 +56,8 @@ select{
 }
 
 .inputStyle{
-    width: 100%;
+    width: 90%;
+    margin-left:5px;
 }
 
 .create-event-button{
@@ -74,7 +73,8 @@ select{
     /* Smooth transition for hover effects */
     margin-top: 20px;
     position: relative;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 
     
     
@@ -88,4 +88,20 @@ select{
 
 }
 
+
+
+@media screen and (max-width: 600px) {
+    /* Adjust styles for screens smaller than 600px */
+    .event-main {
+        width: 100%;
+        padding: 20px;
+        
+        
+    }
+
+    .create-event-button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 
