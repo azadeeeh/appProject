@@ -43,7 +43,7 @@ const CreateEvent = newEvent => {
     });
 
     const [createdEvent, setCreatedEvent] = useState(null);
-    const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([]); //the state that contains the list of existing events, it maps through all of them
 
     //fetching existing data
     const fetchData = async () => {
@@ -95,6 +95,7 @@ const CreateEvent = newEvent => {
             });
 
             setCreatedEvent(response.data); //update data
+
 
             fetchData();
         } catch (error) {
