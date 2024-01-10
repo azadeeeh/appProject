@@ -7,27 +7,6 @@ import './event.css';
 const URL = 'https://6576163c0febac18d403ac52.mockapi.io';
 
 
-//display existing events  it gets the events prop from createEvent and removeEvent from the fun====
-const EventsList = ({ events, removeEvent }) => {
-    return (
-        <ul>
-            {events.map(event => (
-                <li key={event.id}>
-                    <p>Hobby Title: {event.hobbyTitle}</p>
-                    <p>Category: {event.hobbyType}</p>
-                    <p>Date: {event.date}</p>
-                    <p>Time: {event.time}</p>
-                    <p>Location: {event.location}</p>
-                    <p>Activity: {event.activity}</p>
-                    <p>Spaces Available: {event.spacesAvailable}</p>
-                    <button className="remove-button" onClick={() => removeEvent(event.id)}>remove</button>
-
-                </li>
-            ))}
-        </ul>
-    );
-};
-
 //create new event
 const CreateEvent = newEvent => {
     // data
@@ -42,8 +21,8 @@ const CreateEvent = newEvent => {
 
     });
 
-    const [createdEvent, setCreatedEvent] = useState(null);
-    const [events, setEvents] = useState([]); //the state that contains the list of existing events, it maps through all of them
+    const [createdEvent, setCreatedEvent] = useState(null); //contains the most recent event created
+    const [events, setEvents] = useState([]); //the state that contains the list of existing events fetched from the mockAPI
 
     //fetching existing data
     const fetchData = async () => {
@@ -69,6 +48,33 @@ const CreateEvent = newEvent => {
             [name]: value,
         });
     };
+
+
+
+
+
+
+    //display existing events  it gets the events prop from createEvent and removeEvent from the fun====
+    const EventsList = ({ events, removeEvent }) => {
+        return (
+            <ul>
+                {events.map(event => (
+                    <li key={event.id}>
+                        <p>Hobby Title: {event.hobbyTitle}</p>
+                        <p>Category: {event.hobbyType}</p>
+                        <p>Date: {event.date}</p>
+                        <p>Time: {event.time}</p>
+                        <p>Location: {event.location}</p>
+                        <p>Activity: {event.activity}</p>
+                        <p>Spaces Available: {event.spacesAvailable}</p>
+                        <button className="remove-button" onClick={() => removeEvent(event.id)}>remove</button>
+
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
 
 
     //handle form submission and sends data to mockAPI
