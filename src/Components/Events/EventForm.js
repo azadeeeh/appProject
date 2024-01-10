@@ -16,7 +16,7 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
                     className="inputStyle"
                     type="text"
                     name="hobbyTitle"
-                    value={formData.hobbyType}
+                    value={formData.hobbyTitle}
                     onChange={handleChange}
                     required
                 />
