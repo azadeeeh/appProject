@@ -7,30 +7,32 @@ import './event.css';
 const URL = 'https://6576163c0febac18d403ac52.mockapi.io';
 
 
-
+//display existing events  it gets the events prop from createEvent and removeEvent from the fun====
 const EventsList = ({ events, removeEvent }) => {
     return (
         <ul>
             {events.map(event => (
                 <li key={event.id}>
-                    <p>Hobby Title: {event.hobbyType}</p>
-                    <p>Category: {event.category}</p>
+                    <p>Hobby Title: {event.hobbyTitle}</p>
+                    <p>Category: {event.hobbyType}</p>
                     <p>Date: {event.date}</p>
                     <p>Time: {event.time}</p>
                     <p>Location: {event.location}</p>
                     <p>Activity: {event.activity}</p>
                     <p>Spaces Available: {event.spacesAvailable}</p>
                     <button className="remove-button" onClick={() => removeEvent(event.id)}>remove</button>
+
                 </li>
             ))}
         </ul>
     );
 };
 
-
+//create new event
 const CreateEvent = newEvent => {
     // data
     const [formData, setFormData] = useState({
+        hobbyTitle: '',
         hobbyType: '',
         date: '',
         time: '',
@@ -44,21 +46,22 @@ const CreateEvent = newEvent => {
     const [events, setEvents] = useState([]);
 
     //fetching existing data
-    const fetchData = () => {
-        axios.get(`${URL}/events`)
-            .then(response => {
-                setEvents(response.data);
-            }).catch(error => {
-                console.error('error:', error);
-            });
-    }
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`${URL}/events`);
+            setEvents(response.data);
+        } catch (error) {
+            console.error('error:', error);
+        }
+    };
+
 
     //ensuring fetchData runs once and avoid unnecessary re-fetching
     useEffect(() => {
         fetchData();
     }, []);
 
-    //handle input changes by updating the state
+    //handle input changes by updating the state, it updates data based on user input
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -68,7 +71,7 @@ const CreateEvent = newEvent => {
     };
 
 
-    //handle submit
+    //handle form submission and sends data to mockAPI
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -80,6 +83,17 @@ const CreateEvent = newEvent => {
 
             }); //adding data to the existing ones
 
+            // Reset the form data to its initial state
+            setFormData({
+                hobbyTitle: '',
+                hobbyType: '',
+                date: '',
+                time: '',
+                location: '',
+                activity: '',
+                spacesAvailable: '',
+            });
+
             setCreatedEvent(response.data); //update data
 
             fetchData();
@@ -89,7 +103,7 @@ const CreateEvent = newEvent => {
         //console.log(formData);
     };
 
-    //remove Event
+    //removing the Event by making a DELETE request to mockAPI
     const removeEvent = async (eventId) => {
         try {
             await axios.delete(`${URL}/events/${eventId}`);

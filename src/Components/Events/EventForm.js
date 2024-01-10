@@ -3,6 +3,8 @@
 import '../App/App.css';
 import categories from '../../Types/categories'
 
+//EventForm taking props for managing
+
 const EventForm = ({ formData, handleChange, handleSubmit }) => {
 
     return (
@@ -13,7 +15,7 @@ const EventForm = ({ formData, handleChange, handleSubmit }) => {
                 <input
                     className="inputStyle"
                     type="text"
-                    name="hobbyType"
+                    name="hobbyTitle"
                     value={formData.hobbyType}
                     onChange={handleChange}
                     required
