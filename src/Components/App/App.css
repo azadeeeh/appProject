@@ -13,9 +13,9 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    
-    background-color:#dff5f1;
-    
+
+    background-color: #dff5f1;
+
 }
 
 h1 {
@@ -51,11 +51,14 @@ img.logo:hover {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Increase the max-width for a larger form */
+    max-width: 800px;
+    /* Increase the max-width for a larger form */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: block; /* Add this to make it a block-level element */
-    margin: 0 auto; /* Adjusted margin to center horizontally */
+    display: block;
+    /* Add this to make it a block-level element */
+    margin: 0 auto;
+    /* Adjusted margin to center horizontally */
 
 
 }
@@ -66,7 +69,7 @@ img.logo:hover {
 }
 
 /* Input Field Styling */
-.post-title{
+.post-title {
 
     width: 100%;
     padding: 12px 15px;
@@ -115,7 +118,8 @@ img.logo:hover {
 .post-category:focus {
     outline: none;
     /* Remove default focus outline */
-    border-color:#AE784F;;
+    border-color: #AE784F;
+    ;
     /* Border color on focus */
 }
 
@@ -140,7 +144,8 @@ img.logo:hover {
 /* Add this style for the category container */
 .category-container {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+    flex-wrap: wrap;
+    /* Allow items to wrap into multiple rows */
     justify-content: space-around;
     align-items: center;
     margin-top: 10px;
@@ -149,10 +154,14 @@ img.logo:hover {
 /* Adjust the width of the category items to fit four in one row */
 .category-item {
     position: relative;
-    flex: 0 1 calc(25% - 20px); /* Adjust the flex property to limit to 4 items in a row */
-    max-width: calc(25% - 20px); /* Adjust the max-width based on your design */
-    margin: 10px; /* Adjust the margin for spacing between items */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    flex: 0 1 calc(25% - 20px);
+    /* Adjust the flex property to limit to 4 items in a row */
+    max-width: calc(25% - 20px);
+    /* Adjust the max-width based on your design */
+    margin: 10px;
+    /* Adjust the margin for spacing between items */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
     text-align: center;
 }
 
@@ -160,29 +169,39 @@ img.logo:hover {
 .category-item img {
 
     border-radius: 8px;
-    transition: transform 0.2s ease; /* Add smooth transition for a visual effect on hover */
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    border: 2px solid transparent; /* Add a transparent border initially */
+    transition: transform 0.2s ease;
+    /* Add smooth transition for a visual effect on hover */
+    width: 150px;
+    /* Set a fixed width */
+    height: 150px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Maintain aspect ratio and cover the container */
+    border: 2px solid transparent;
+    /* Add a transparent border initially */
 
 }
 
 /* Add this style for the hover effect */
 .category-item:hover img {
-    transform: scale(1.05); /* Scale up the image on hover for a visual effect */
+    transform: scale(1.05);
+    /* Scale up the image on hover for a visual effect */
 }
 
 
 /* Add this style for the border when clicked */
 .category-item.clicked img {
-    border: 8px solid #AE784F; /* Set the border color on click */
+    border: 8px solid #AE784F;
+    /* Set the border color on click */
 }
 
 .category-item p {
-    margin-top: 8px; /* Adjust the margin for spacing between image and text */
-    font-size: 14px; /* Adjust the font size based on your design */
-    color: #008080 ; /* Adjust the color based on your design */
+    margin-top: 8px;
+    /* Adjust the margin for spacing between image and text */
+    font-size: 14px;
+    /* Adjust the font size based on your design */
+    color: #008080;
+    /* Adjust the color based on your design */
     text-align: center;
 }
 
@@ -244,9 +263,9 @@ li small {
 /* Filter Category Button Styling */
 .filter-category-button {
     background-color: #008080;
-   
+
     color: white;
-   
+
     padding: 10px 15px;
     /* Padding for size */
     border: none;
@@ -261,7 +280,7 @@ li small {
     /* Smooth transition for hover effects */
     height: 60px;
     margin: 10px;
-    
+
 
 }
 
@@ -293,38 +312,40 @@ footer {
     margin-right: 20px;
     position: relative;
     top: 30px;
-    
+
 
 }
 
 .event-button:hover {
     background-color: #F5EBE3;
     color: #008080;
-    margin-left:48px;
+    margin-left: 48px;
 }
 
-.event-main{
+.event-main {
     background-color: #F5EBE3;
-    height:100%;
-    width:90%;
+    height: 100%;
+    width: 90%;
     z-index: 2;
     padding: 40px;
     position: relative;
-    left:50px;
+    left: 50px;
     top: 50px;
     margin: auto 0;
     border-radius: 10px;
-    box-shadow: 0 5px 15px #825331;;
-  
+    box-shadow: 0 5px 15px #825331;
+    ;
+
 }
 
 
 @media screen and (max-width: 600px) {
+
     /* Adjust styles for screens smaller than 600px */
     header {
         flex-direction: column;
         text-align: center;
-        width:100%;
+        width: 100%;
     }
 
     img.logo {
@@ -335,7 +356,7 @@ footer {
     .event-main {
         width: 100%;
         padding: 20px;
-      
+
     }
 
     .event-button {
@@ -346,17 +367,57 @@ footer {
     .category-item img {
 
         border-radius: 8px;
-        transition: transform 0.2s ease; /* Add smooth transition for a visual effect on hover */
-        max-width: 50px; /* Set a fixed width */
-        max-height: 50px; /* Set a fixed height */
-        object-fit: cover; /* Maintain aspect ratio and cover the container */
-        border: 2px solid transparent; /* Add a transparent border initially */
-      
-    
+        transition: transform 0.2s ease;
+        /* Add smooth transition for a visual effect on hover */
+        max-width: 50px;
+        /* Set a fixed width */
+        max-height: 50px;
+        /* Set a fixed height */
+        object-fit: cover;
+        /* Maintain aspect ratio and cover the container */
+        border: 2px solid transparent;
+        /* Add a transparent border initially */
+
+
     }
 
-    .category-item p{
-        font-size:0.5em;
-        
+    .category-item p {
+        font-size: 0.5em;
+
     }
+
+    .home-menu {
+        flex-direction: column;
+        transition-duration: 500ms;
+        margin: 2em auto;
+    }
+
+    .home-menu img {
+        width: 64px;
+    }
+}
+
+.home-menu {
+    display: flex;
+    margin: 8em auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-family: cursive;
+}
+
+.home-menu img {
+    width: 128px;
+}
+.home-menu a {
+    margin: 1em;
+    color: black;
+    text-decoration: none;
+    transition-duration: 500ms;
+}
+
+.home-menu a:hover {
+    scale: 1.1;
+    transition-duration: 500ms;
 }
