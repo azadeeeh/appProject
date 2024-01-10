@@ -10,8 +10,8 @@ const CreatePost = ({ addNewPost, categories }) => {
     content: '',
     category: '',
   });
-  
-  
+
+
   const handleItemClick = (categoryName) => {
     setPost({ ...post, category: categoryName });
   };
@@ -47,7 +47,9 @@ const CreatePost = ({ addNewPost, categories }) => {
             className={`category-item ${post.category === category.name ? 'clicked' : ''}`}
             onClick={() => handleItemClick(category.name)}
           >
-            <img src={`${process.env.PUBLIC_URL}/${category.image}`} alt={category.name} />
+            {category.name === "Crafts" ?
+              <img src={`${process.env.PUBLIC_URL}/${category.image}`} alt={category.name} /> :
+              <img src={`${process.env.PUBLIC_URL}/${category.image}`.replace(".jpg", ".JPG")} alt={category.name} />}
             <p>{category.name}</p>
           </div>
         ))}
