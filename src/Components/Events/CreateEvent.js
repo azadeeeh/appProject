@@ -40,7 +40,8 @@ const CreateEvent = newEvent => {
         fetchData();
     }, []);
 
-    //handle input changes by updating the state, it updates data based on user input
+    //handle input changes by updating the formData state, it updates data based on user input and gets name and value from event object e
+    //it also add the new info to the existing data, it re-renders with the updated state
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -54,7 +55,7 @@ const CreateEvent = newEvent => {
 
 
 
-    //display existing events  it gets the events prop from createEvent and removeEvent from the fun====
+    //display existing events  it gets the events prop from createEvent and removeEvent from the function removeEvent
     const EventsList = ({ events, removeEvent }) => {
         return (
             <ul>
